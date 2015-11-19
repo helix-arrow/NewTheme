@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="description.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>Template - News</title>
 
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
@@ -26,9 +26,6 @@
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="frontpage-title mdl-layout-title">
-<!--
-            <img class="frontpage-logo-image" src="http://www.getmdl.io/templates/android-dot-com/images/android-logo.png">
--->
             <img class="frontpage-logo-image" src="images/site-logo.png">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
@@ -53,9 +50,6 @@
             </nav>
           </div>
           <span class="frontpage-mobile-title mdl-layout-title">
-<!--
-            <img class="frontpage-logo-image" src="http://www.getmdl.io/templates/android-dot-com/images/android-logo.png">
--->
             <img class="frontpage-logo-image" src="images/site-logo.png">
           </span>
 
@@ -64,9 +58,6 @@
       <!-- Left side menu -->
       <div class="frontpage-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-<!--
-          <img class="frontpage-logo-image" src="http://www.getmdl.io/templates/android-dot-com/images/android-logo-white.png">
--->
           <img class="frontpage-logo-image" src="images/site-logo-white.png">
         </span>
         <nav class="mdl-navigation">
@@ -85,23 +76,17 @@
       <!-- メイン・コンテンツ                                                               -->
       <!-- ================================================================================ -->
       <main class="mdl-layout__content">
-        <!-- Main image -->
-        <a name="top"></a>
-        <div class="frontpage-overview-section mdl-typography--text-center">
-          <a href="#news">
-            <button class="frontpage-button-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-              <i class="material-icons">expand_more</i>
-            </button>
-          </a>
-        </div>
-
         <!-- News & Information -->
-        <a name="news"></a>
+        <a name="top"></a>
         <div class="frontpage-news-section">
+<!--
+          サイドバーと間隔を開けるため、mdl-grid--no-spacingを除去
           <section class="section--center mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
+-->
+          <section class="section--center mdl-grid">
+            <div class="mdl-cell mdl-cell--9-col mdl-card mdl-shadow--2dp">
               <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-                <h4 class="mdl-cell mdl-cell--12-col">News & Informations</h4>
+                <h4 class="mdl-cell mdl-cell--12-col">最新ニュース</h4>
 
                 <div class="section__thumbnail-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                   <img src="images/Thumbnail_80x60.jpg" />
@@ -127,21 +112,36 @@
                   Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Duis nulla tempor do aute et eiusmod velit exercitation nostrud quis <a href="#">続きを読む...</a>
                 </div>
               </div>
-              <div class="mdl-card__actions">
-                <a href="template_articles.html" class="mdl-button">もっと読む...</a>
+              <div class="section__page-selector-container mdl-card__actions">
+                <button class="mdl-button">
+                  <i class="material-icons">navigate_before</i>
+                </button>
+                <span class="mdl-button" disabled>2</span>
+                <a href="#" class="mdl-button">3</a>
+                <a href="#" class="mdl-button">4</a>
+                <a href="#" class="mdl-button">5</a>
+                <a href="#" class="mdl-button">6</a>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                  <i class="material-icons">navigate_next</i>
+                </button>
               </div>
             </div>
+
+            <div class="news-sidebar-section mdl-cell mdl-cell--3-col mdl-card mdl-shadow--2dp">
+                <h4>アーカイブ</h4>
+                <h5>2015年10月</h5><!-- flex-start にしたらいいかも-->
 <!--
-            アクションボタンは不要のため削除
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
+              <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">アーカイブ</h4>
+
+                <div class="section__text mdl-cell mdl-cell--12-col">
+                  <h5>2015年10月</h5>
+                </div>
+
+              </div>
 -->
+            </div>
+
           </section>
         </div>
 

@@ -1,0 +1,406 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+  margin: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.frontpage-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.frontpage-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.frontpage-button-fab {
+  position: absolute;
+  right: 20%;
+  bottom: -26px;
+  z-index: 3;
+/*  background: #64ffda !important;*/
+/*  background: rgb(255,64,129) !important;*/
+  color: black !important;
+}
+
+.frontpage-mobile-title {
+  display: none !important;
+}
+
+
+.frontpage-logo-image {
+  height: 28px;
+  width: 140px;
+}
+
+
+.frontpage-header {
+  overflow: visible;
+  background-color: white;
+}
+
+  .frontpage-header .material-icons {
+    color: #767777 !important;
+  }
+
+  .frontpage-header .mdl-layout__drawer-button {
+    background: transparent;
+    color: #767777;
+  }
+
+  .frontpage-header .mdl-navigation__link {
+    color: #757575;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .frontpage-navigation-container {
+    /* Simple hack to make the overflow happen to the left instead... */
+    direction: rtl;
+    order: 1;
+    width: 500px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .frontpage-navigation {
+    /* ... and now make sure the content is actually LTR */
+    direction: ltr;
+    justify-content: flex-end;
+    width: 800px;
+  }
+
+  .frontpage-search-box.is-focused + .frontpage-navigation-container {
+    opacity: 0;
+    width: 100px;
+  }
+
+
+  .frontpage-navigation .mdl-navigation__link {
+    display: inline-block;
+    height: 60px;
+    line-height: 68px;
+    background-color: transparent !important;
+    border-bottom: 4px solid transparent;
+  }
+
+    .frontpage-navigation .mdl-navigation__link:hover {
+      border-bottom: 4px solid #8bc34a;
+    }
+
+  .frontpage-search-box {
+    order: 2;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+
+.frontpage-drawer {
+  border-right: none;
+}
+
+  .frontpage-drawer-separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+  }
+
+  .frontpage-drawer .mdl-navigation__link.mdl-navigation__link {
+    font-size: 14px;
+    color: #757575;
+  }
+
+  .frontpage-drawer span.mdl-navigation__link.mdl-navigation__link {
+    color: #8bc34a;
+  }
+
+  .frontpage-drawer .mdl-layout-title {
+    position: relative;
+    background: #6ab344;
+    height: 160px;
+  }
+
+  .frontpage-drawer .frontpage-logo-image {
+    position: absolute;
+    bottom: 16px;
+  }
+
+/*
+使ってないけど後で使うかも
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 500;
+}
+*/
+
+.frontpage-link {
+  text-decoration: none;
+  color: #8bc34a !important;
+}
+
+
+/* ==============================================================================
+ * MAIN CONTENT
+ * ============================================================================== */
+/* Overview section */
+.frontpage-overview-section {
+  position: relative;
+  height: 800px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('images/slide01.jpg') center 30% no-repeat;
+  background-size: cover;
+}
+
+/* Articles section */
+.frontpage-news-section {
+  position: relative;
+  padding: 8px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+/* Grid settings for news section */
+.frontpage-news-section section {
+  position: relative;
+  margin-bottom: 48px;
+}
+.frontpage-news-section section.section--center {
+  max-width: 860px;
+/*article pageは1044にする
+  max-width: 1044px;*/
+}
+/*
+アクションボタンは使用しないため削除
+.frontpage-news-section section > button {
+  position: absolute;
+  z-index: 99;
+  top: 8px;
+  right: 8px;
+}
+*/
+.frontpage-news-section section .section__text {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+.frontpage-news-section section .section__text h5 {
+  font-size: inherit;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+.frontpage-news-section section .section__text a {
+  text-decoration: none;
+}
+.frontpage-news-section section .section__thumbnail-container > img {
+  width: auto;
+  height: 100%;
+/*  width: 80px;
+  height: 60px;*/
+  margin: 8px 0;
+}
+/*
+.frontpage-news-section section.section--footer {
+  padding: 64px 0;
+  margin: 0 -8px -8px -8px;
+}
+*/
+.frontpage-news-section section.section--center .section__text:not(:last-child) {
+  border-bottom: 1px solid rgba(0,0,0,.13);
+}
+
+/* Card settings for news section */
+.frontpage-news-section .mdl-card {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.frontpage-news-section .mdl-card > * {
+  height: auto;
+}
+.frontpage-news-section .mdl-card .mdl-card__supporting-text {
+  margin: 40px;
+  flex-grow: 1;
+  padding: 0;
+  color: inherit;
+  width: calc(100% - 80px);
+}
+.frontpage-news-section .mdl-card__supporting-text h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.frontpage-news-section .mdl-card__actions {
+  margin: 0;
+  padding: 4px 40px;
+  color: inherit;
+}
+.frontpage-news-section .mdl-card__actions a {
+  color: #00BCD4;
+  margin: 0;
+}
+.frontpage-news-section .mdl-card__actions a:hover,
+.frontpage-news-section .mdl-card__actions a:active {
+  color: inherit;
+  background-color: transparent;
+}
+.frontpage-news-section .mdl-card__supporting-text + .mdl-card__actions {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+.frontpage-news-section .mdl-card .mdl-card__supporting-text > h3:first-child {
+  margin-bottom: 24px;
+}
+
+
+/* test */
+.frontpage-news-section .section__page-selector-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.frontpage-news-section .section__page-selector-container .mdl-button {
+  min-width: 0px;
+}
+.frontpage-news-section .news-sidebar-section {
+  align-items: flex-start;
+}
+
+
+/* ==============================================================================
+ * PAGE FOOTER
+ * ============================================================================== */
+.frontpage-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+  .frontpage-footer a:hover {
+    color: #8bc34a;
+  }
+
+/* 2015-10-28 A.YAMASHITA ADD START */
+  .frontpage-footer .mdl-mega-footer--top-section .frontpage-footer--social-btn-facebook {
+    background-size: contain;
+    background-image: url("images/FB-f-Logo__blue_50.png");
+    cursor: pointer;
+  }
+
+  .frontpage-footer .mdl-mega-footer--top-section .frontpage-footer--social-btn-twitter {
+    background-size: contain;
+    background-image: url("images/TwitterLogo_white.png");
+    background-color: #55acee;
+    cursor: pointer;
+  }
+
+  .frontpage-footer .mdl-mega-footer--middle-section .mdl-mega-footer--drop-down-section .mdl-mega-footer--heading {
+    color: #6ab344;
+  }
+
+  .frontpage-footer .mdl-mega-footer--bottom-section .mdl-logo {
+    color: #6ab344;
+  }
+/* 2015-10-28 A.YAMASHITA ADD END */
+
+  .frontpage-footer .mdl-mega-footer--top-section::after {
+    border-bottom: none;
+  }
+
+  .frontpage-footer .mdl-mega-footer--middle-section::after {
+    border-bottom: none;
+  }
+
+  .frontpage-footer .mdl-mega-footer--bottom-section {
+    position: relative;
+  }
+
+  .frontpage-footer .mdl-mega-footer--bottom-section a {
+    margin-right: 2em;
+  }
+
+  .frontpage-footer .mdl-mega-footer--right-section a .material-icons {
+    position: relative;
+    top: 6px;
+  }
+
+
+
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+  .frontpage-navigation-container {
+    display: none;
+  }
+
+  .frontpage-title {
+    display: none !important;
+  }
+
+  .frontpage-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .frontpage-search-box.is-focused ~ .frontpage-mobile-title,
+  .frontpage-search-box.is-focused + .frontpage-navigation-container + .frontpage-mobile-title {
+    opacity: 0;
+  }
+
+  .frontpage-search-box.is-focused {
+    width: calc(100% - 48px);
+  }
+
+  .frontpage-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+
+  .frontpage-overview-section {
+    height: 350px;
+  }
+
+/* 2015-10-30 A.YAMASHITA ADD START */
+  .news-sidebar-section {
+    display: none;
+  }
+/* 2015-10-30 A.YAMASHITA ADD END */
+}
